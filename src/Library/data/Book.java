@@ -1,4 +1,4 @@
-package Library;
+package Library.data;
 
 public class Book {
     private String title;
@@ -9,7 +9,7 @@ public class Book {
     private String isbn;
 
     //constructor
-    Book(String title, String author, int releaseDate, int pages, String publisher, String isbn){
+    public Book(String title, String author, int releaseDate, int pages, String publisher, String isbn){
         this.title = title;
         this.author = author;
         this.releaseDate = releaseDate;
@@ -18,11 +18,11 @@ public class Book {
         this.isbn = isbn;
     }
     
-    Book (Book book){
+    public Book (Book book){
         this(book.getTitle(), book.getAuthor(), book.getReleaseDate(), book.getPages(), book.getPublisher(), book.getIsbn());
     }
     //method
-    void printInfo (){
+    public void printInfo (){
         String info = getTitle()+" "+ getAuthor()+" "+getReleaseDate()+" "+getPages()+" "+getPublisher()+" "+getIsbn();
         System.out.println(info);
     }
