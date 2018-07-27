@@ -9,12 +9,16 @@ public class Book {
     String isbn;
 
     Book(String bookTitle, String bookAuthor, int bookReleaseDate, int bookPages, String bookPublisher, String bookIsbn){
-        title = bookTitle;
-        author = bookAuthor;
-        releaseDate = bookReleaseDate;
-        pages = bookPages;
-        publisher = bookPublisher;
-        isbn = bookIsbn;
+        this.title = title;
+        this.author = author;
+        this.releaseDate = releaseDate;
+        this.pages = pages;
+        this.publisher = publisher;
+        this.isbn = isbn;
+    }
+    
+    Book (Book book){
+        this(book.title, book.author, book.releaseDate, book.pages, book.publisher, book.isbn)
     }
 
     void printInfo (){
