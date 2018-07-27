@@ -2,7 +2,7 @@ package Library;
 
 public class Library {
     public static void main (String[] args){
-        final String appName = "Library v0.2";
+        final String appName = "Library v0.3";
 
         Book book1 = new Book("Thinking in Java", "Bruce Eckel", 2006, 1248,
         "Helion","9788328334427");
