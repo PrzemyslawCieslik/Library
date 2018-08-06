@@ -4,15 +4,21 @@ import Library.data.Book;
 
 import java.util.Scanner;
 
-public class dataReader {
+public class DataReader {
     private Scanner sc;
 
-    public dataReader(){
+    public DataReader() {
         sc = new Scanner(System.in);
     }
 
     public void close(){
         sc.close();
+    }
+
+    public int getInt() {
+        int number = sc.nextInt();
+        sc.nextLine();
+        return number;
     }
     //Method
     public Book readAndPrint(){
