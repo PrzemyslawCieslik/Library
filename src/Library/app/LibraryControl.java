@@ -6,9 +6,9 @@ import Library.utils.DataReader;
 
 public class LibraryControl {
 
-    public final int exit = 0;
-    public final int addBook = 1;
-    public final int printBooks = 2;
+    public static final  int EXIT = 0;
+    public static final  int ADD_BOOK = 1;
+    public static final  int PRINT_BOOKS = 2;
 
     private DataReader dataReader;
 
@@ -22,27 +22,29 @@ public class LibraryControl {
     public void controlLoop() {
         int option;
         printOptions();
-        while ((option = dataReader.getInt()) != exit) {
+        while ((option = dataReader.getInt()) != EXIT) {
             switch (option) {
-                case addBook:
+                case ADD_BOOK:
                     addBook();
                     break;
-                case printBooks:
+                case PRINT_BOOKS:
                     printBooks();
                     break;
                 default:
-                    System.out.println("This option doesn't exist. Try again");
+                    System.out.println("Choose another option");
             }
             printOptions();
         }
+
         dataReader.close();
     }
 
+
     private void printOptions() {
         System.out.println("Choose an option: ");
-        System.out.println("0 - exit");
-        System.out.println("1 - add Book");
-        System.out.println("2 - show all Books");
+        System.out.println(EXIT+" - exit");
+        System.out.println(ADD_BOOK+" - add Book");
+        System.out.println(PRINT_BOOKS+" - show all Books");
     }
 
     private void addBook() {
