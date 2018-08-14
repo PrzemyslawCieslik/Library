@@ -55,7 +55,7 @@ public class Library {
             System.out.println("In our library, we don't have any books");
         }
         for(int i=0; i<booksNumber; i++) {
-            books[i].printInfo();
+            System.out.println(books[i]);
         }
     }
 
@@ -64,7 +64,7 @@ public class Library {
             System.out.println("In our library, we don't have any magazines");
         }
         for(int i=0; i<magazinesNumber; i++) {
-            magazines[i].printInfo();
+           System.out.println(magazines[i]);
         }
     }
 }

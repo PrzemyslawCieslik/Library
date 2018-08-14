@@ -42,11 +42,6 @@ public class Magazine extends Publication {
         setDay(day);
     }
 
-    //method
-    public void printInfo(){
-        String info = getTitle()+" "+getPublisher()+" "+getLanguage()+" "+getYear()+" "+getMonth()+" "+getDay();
-        System.out.println(info);
-    }
 
     @Override
     public String toString(){
