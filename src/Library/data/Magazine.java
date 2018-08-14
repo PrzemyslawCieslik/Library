@@ -1,5 +1,7 @@
 package Library.data;
 
+import java.util.Objects;
+
 public class Magazine extends Publication {
     private int month;
     private int day;
@@ -45,4 +47,26 @@ public class Magazine extends Publication {
         String info = getTitle()+" "+getPublisher()+" "+getLanguage()+" "+getYear()+" "+getMonth()+" "+getDay();
         System.out.println(info);
     }
+
+    @Override
+    public String toString(){
+        return getTitle()+" "+getPublisher()+" "+getLanguage()+" "+getYear()+" "+getMonth()+" "+getDay();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Magazine)) return false;
+        if (!super.equals(o)) return false;
+        Magazine magazine = (Magazine) o;
+        return getMonth() == magazine.getMonth() &&
+                getDay() == magazine.getDay() &&
+                Objects.equals(getLanguage(), magazine.getLanguage());
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(super.hashCode(), getMonth(), getDay(), getLanguage());
+    }
 }
+
