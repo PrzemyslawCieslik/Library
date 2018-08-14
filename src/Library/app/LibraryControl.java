@@ -44,7 +44,7 @@ public class LibraryControl {
                     printMagazines();
                     break;
                 default:
-                    System.out.println("Nie ma takiej opcji, wprowadź ponownie: ");
+                    System.out.println("Choose another option: ");
             }
             printOptions();
         }
@@ -52,12 +52,12 @@ public class LibraryControl {
     }
 
     private void printOptions() {
-        System.out.println("Wybierz opcję: ");
-        System.out.println(EXIT + " - wyjście z programu");
-        System.out.println(ADD_BOOK + " - dodanie nowej książki");
-        System.out.println(ADD_MAGAZINE + " - dodanie nowego magazynu");
-        System.out.println(PRINT_BOOKS + " - wyświetl dostępne książki");
-        System.out.println(PRINT_MAGAZINES + " - wyświetl dostępne magazyny");
+        System.out.println("Choose option: ");
+        System.out.println(EXIT + " - exit");
+        System.out.println(ADD_BOOK + " - add new book ");
+        System.out.println(ADD_MAGAZINE + " - add new magazin ");
+        System.out.println(PRINT_BOOKS + " - print available books");
+        System.out.println(PRINT_MAGAZINES + " - print available magazines");
     }
 
     private void addBook() {
