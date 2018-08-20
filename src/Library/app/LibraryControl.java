@@ -39,7 +39,6 @@ public class LibraryControl {
                     printMagazines();
                     break;
                 case EXIT:
-                    ;
             }
             printOptions();
         }
