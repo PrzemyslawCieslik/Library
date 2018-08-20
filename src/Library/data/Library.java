@@ -10,7 +10,7 @@ public class Library {
         return MAX_PUBLICATION;
     }
 
-    public Publication getPublication() {
+    public Publication[] getPublication() {
         return publications;
     }
 
