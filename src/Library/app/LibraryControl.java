@@ -6,16 +6,11 @@ import Library.data.Library;
 import Library.data.Magazine;
 
 public class LibraryControl {
-    // public static finals to control program
-    public static final int EXIT = 0;
-    public static final int ADD_BOOK = 1;
-    public static final int ADD_MAGAZINE = 2;
-    public static final int PRINT_BOOKS = 3;
-    public static final int PRINT_MAGAZINES = 4;
 
+    // To comunicaton with user
     private DataReader dataReader;
 
-    // "Library"
+    //Library to keep datas
     private Library library;
 
     public LibraryControl() {
@@ -24,12 +19,12 @@ public class LibraryControl {
     }
 
     /*
-     * head if to control program
+     * base if, to chose a option
      */
     public void controlLoop() {
-        int option;
+        Option option;
         printOptions();
-        while ((option = dataReader.getInt()) != EXIT) {
+        while ((option = Option.createFromInt(dataReader.getInt())) != Option.EXIT) {
             switch (option) {
                 case ADD_BOOK:
                     addBook();
@@ -43,21 +38,20 @@ public class LibraryControl {
                 case PRINT_MAGAZINES:
                     printMagazines();
                     break;
-                default:
-                    System.out.println("Choose another option: ");
+                case EXIT:
+                    ;
             }
             printOptions();
         }
-       
+        // close
+        dataReader.close();
     }
 
     private void printOptions() {
-        System.out.println("Choose option: ");
-        System.out.println(EXIT + " - exit");
-        System.out.println(ADD_BOOK + " - add new book ");
-        System.out.println(ADD_MAGAZINE + " - add new magazin ");
-        System.out.println(PRINT_BOOKS + " - print available books");
-        System.out.println(PRINT_MAGAZINES + " - print available magazines");
+        System.out.println("Wybierz opcję: ");
+        for (Option o : Option.values()) {
+            System.out.println(o);
+        }
     }
 
     private void addBook() {
