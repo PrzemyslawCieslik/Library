@@ -42,7 +42,7 @@ public class Library {
         }
     }
 
-    public void printBook(){
+    public void printBooks(){
         int countBook = 0;
         for (int i=0; i<publicationsNumber; i++){
             if (publications[i]instanceof Book){
