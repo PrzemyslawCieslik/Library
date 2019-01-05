@@ -7,7 +7,7 @@ import Library.data.Magazine;
 
 public class LibraryControl {
 
-    // To comunicaton with user
+    // To communication with user
     private DataReader dataReader;
 
     //Library to keep datas
@@ -47,7 +47,7 @@ public class LibraryControl {
     }
 
     private void printOptions() {
-        System.out.println("Wybierz opcję: ");
+        System.out.println("Choose option: ");
         for (Option o : Option.values()) {
             System.out.println(o);
         }
@@ -70,4 +70,35 @@ public class LibraryControl {
     private void printMagazines() {
         library.printMagazines();
     }
+}
+
+enum Option {
+
+    EXIT(0, "Exit from app"),
+
+    ADD_BOOK(1, "Add book to library"),
+
+    ADD_MAGAZINE(2, "Add magazine to our Library"),
+
+    PRINT_BOOKS(3, "Print Books"),
+
+    PRINT_MAGAZINES(4, "Print magazines");
+
+    private int value;
+    private String description;
+
+    Option(int value, String desc) {
+        this.value = value;
+        this.description = desc;
+    }
+
+    @Override
+    public String toString() {
+        return value + " " + description;
+    }
+
+    public static Option createFromInt(int option) {
+        return Option.values()[option];
+    }
+
 }

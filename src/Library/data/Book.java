@@ -4,6 +4,7 @@ package Library.data;
 import java.util.Objects;
 
 public class Book extends Publication {
+    private static final long serialVersionUID = -7907331751072277846L;
     private String author;
     private int pages;
     private String isbn;

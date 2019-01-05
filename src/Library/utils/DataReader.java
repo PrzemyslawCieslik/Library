@@ -5,7 +5,7 @@ import Library.data.Magazine;
 
 import java.util.Scanner;
 
-public class DataReader {
+public class    DataReader {
     private Scanner sc;
 
     public DataReader() {
@@ -35,7 +35,6 @@ public class DataReader {
         int releaseDate = sc.nextInt();
         System.out.println("Pages");
         int pages = sc.nextInt();
-        close();
         return new Book(title,author,releaseDate,pages,publisher,isbn);
     }
 
@@ -52,7 +51,6 @@ public class DataReader {
         int month = sc.nextInt();
         System.out.println("Day: ");
         int day = sc.nextInt();
-        close();
         return new Magazine(title, publisher, language,year, month, day);
     }
 }
